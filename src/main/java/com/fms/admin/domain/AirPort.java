@@ -8,6 +8,7 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,4 +23,6 @@ public class AirPort  implements Serializable {
     private String code;
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Flight> flightList;
 }

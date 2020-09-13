@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @SecondaryTable(name="history", pkJoinColumns = {@PrimaryKeyJoinColumn(name = "airline_id", referencedColumnName = "id")})
@@ -23,4 +24,6 @@ public class AirLine  implements Serializable {
     private String code;
     @Column(table = "history")
     private String name;
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Flight> flightList;
 }

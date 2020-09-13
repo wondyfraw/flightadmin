@@ -19,7 +19,7 @@ public class Passenger implements Serializable {
 
     @Id
     @GeneratedValue
-    private Integer in;
+    private Integer id;
     private String firstName;
     private String lastName;
     @Email
@@ -27,6 +27,6 @@ public class Passenger implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date dob;
 
-    @OneToMany
+    @OneToOne
     private Address address;
 }
