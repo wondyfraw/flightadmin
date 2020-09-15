@@ -23,7 +23,7 @@ public class Flight implements Serializable {
     private Integer capacity;
     private Double price;
     @ManyToOne
-    @Column(name = "airline_id")
+    @JoinColumn(name = "airline_id")
     private AirLine airLine;
     @ManyToOne
     private AirPort origin;

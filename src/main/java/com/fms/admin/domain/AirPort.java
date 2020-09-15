@@ -23,6 +23,5 @@ public class AirPort  implements Serializable {
     private String code;
     @OneToOne(cascade = CascadeType.ALL)
     private Address address;
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Flight> flightList;
+
 }

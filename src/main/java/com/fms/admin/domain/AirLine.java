@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -22,8 +23,9 @@ public class AirLine  implements Serializable {
     private Integer id;
     @Column(length = 2)
     private String code;
-    @Column(table = "history")
     private String name;
-    @OneToMany(cascade = CascadeType.REMOVE)
-    private List<Flight> flightList;
+    @Column(table = "history")
+    private String history;
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "airLine")
+    private List<Flight> flightList = new ArrayList<>();
 }
