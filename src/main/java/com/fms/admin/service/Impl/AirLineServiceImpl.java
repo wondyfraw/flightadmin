@@ -16,7 +16,8 @@ public class AirLineServiceImpl implements AirLineService {
 
     @Override
     public List<AirLine> getAllAirLines() {
-        return null;
+
+        return airLineRepository.findAll();
     }
 
     @Override
@@ -47,4 +48,5 @@ public class AirLineServiceImpl implements AirLineService {
         }
         return airLineRepository.findByCode(code);
     }
+
 }
