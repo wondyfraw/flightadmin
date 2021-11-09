@@ -7,9 +7,13 @@ pipeline {
     stages {
            stage('Initialize'){
               steps{
-                 sh 'echo "PATH = ${PATH}"'
-                     echo "PATH = ${PATH}"
-                     echo "M2_HOME = ${M2_HOME}"
+                echo 'Initialize'
+              }
+           }
+           stage('Compile'){
+              steps{
+                 echo "-==- compile project"
+                 sh "./mvnw clean compile"
               }
            }
            stage('Build'){
