@@ -10,7 +10,7 @@ pipeline {
                 echo 'Initialize'
               }
            }
-           stages {
+           stage {
                    stage('Compile stage') {
                        steps {
                            bat "mvn clean compile"
