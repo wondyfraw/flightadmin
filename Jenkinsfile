@@ -11,11 +11,11 @@ pipeline {
               }
            }
            stage('Compile'){
-              steps{
-                 echo "-==- compile project"
-                 sh "./mvnw clean compile"
-              }
-           }
+              steps {
+                          withMaven(maven : 'apache-maven-3.8.3') {
+                              bat'mvn clean compile'
+                          }
+                      }
            stage('Build'){
              steps{
                 echo 'This is minimal pipeline.'
