@@ -10,13 +10,19 @@ pipeline {
                 echo 'Initialize'
               }
            }
-           stage('Compile'){
-              steps {
-                          withMaven(maven : 'apache-maven-3.8.3') {
-                              bat'mvn clean compile'
-                          }
-                      }
-                     }
+           stages {
+                   stage('Compile stage') {
+                       steps {
+                           bat "mvn clean compile"
+                   }
+               }
+//            stage('Compile'){
+//               steps {
+//                           withMaven(maven : 'apache-maven-3.8.3') {
+//                               bat'mvn clean compile'
+//                           }
+//                       }
+//                      }
            stage('Build'){
              steps{
                 echo 'This is minimal pipeline.'
