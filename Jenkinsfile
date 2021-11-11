@@ -25,6 +25,7 @@ pipeline {
            stage('Build'){
              steps{
                 echo 'This is minimal pipeline.'
+                bat 'mvn -Dmaven.test.failure.ignore=true install'
              }
            }
 //         stage('git repo & clean') {
